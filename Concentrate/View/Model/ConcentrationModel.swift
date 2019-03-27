@@ -26,7 +26,7 @@ struct Concentration {
 //            let faceUpCardIndices = cards.indices.filter {cards[$0].isFaceUp}
 //            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first : nil
  
-        //  the 11 line code below is the same as the 2 lines above.
+        //  the 11 lines of code below is the same as the 2 lines above.
 //            var foundIndex: Int?
 //            for index in cards.indices {
 //                if cards[index].isFaceUp {

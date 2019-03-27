@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     //    var emojis:Emoji = Emoji()
     private var emojiChoices: ([String],UIColor,UIColor) = Emoji.init().selectEmojis()
     private var emoji = [Card:String]()
-    
+ 
     @IBAction private func newGameButton(_ sender: UIButton) {
         
         emoji = [:]
