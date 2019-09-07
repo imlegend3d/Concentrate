@@ -280,7 +280,7 @@
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbG-PW-1iI">
                                 <rect key="frame" x="16" y="806.66666666666663" width="103" height="18"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="103" id="Bsg-e2-I0E"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="18" id="trD-n1-R2C"/>
@@ -291,7 +291,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip Count: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zW-Tv-s4k">
                                 <rect key="frame" x="16" y="832.66666666666663" width="160" height="20.333333333333371"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="5zW-Tv-s4k" secondAttribute="height" multiplier="97:20" constant="62.800000000000004" id="Lou-F8-ktM"/>
                                 </constraints>
@@ -300,19 +300,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzw-8c-Yqp">
-                                <rect key="frame" x="323" y="823" width="75" height="30"/>
-                                <color key="backgroundColor" red="0.002224128577" green="0.0014938768800000001" blue="0.0073960977159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="295" y="822" width="103" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="kzw-8c-Yqp" secondAttribute="height" multiplier="5:2" id="N7q-As-vbr"/>
-                                    <constraint firstAttribute="width" secondItem="kzw-8c-Yqp" secondAttribute="height" multiplier="5:2" id="cnp-vp-3hy"/>
-                                    <constraint firstAttribute="height" constant="30" id="nFm-gk-nNN"/>
+                                    <constraint firstAttribute="width" secondItem="kzw-8c-Yqp" secondAttribute="height" multiplier="5:2" constant="25.5" id="N7q-As-vbr"/>
+                                    <constraint firstAttribute="width" secondItem="kzw-8c-Yqp" secondAttribute="height" multiplier="5:2" constant="25.5" id="cnp-vp-3hy"/>
+                                    <constraint firstAttribute="height" constant="31" id="nFm-gk-nNN"/>
                                 </constraints>
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" red="0.55827802419999994" green="0.35179060699999998" blue="0.96951872110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.10619696234125357" green="0.60611167274309086" blue="0.99850255250930786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="newGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iav-Gy-5O9"/>
+                                    <action selector="newGamePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iav-Gy-5O9"/>
                                 </connections>
                             </button>
                         </subviews>

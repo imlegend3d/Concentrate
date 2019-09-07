@@ -30,16 +30,23 @@ class ConcentrationVC: UIViewController {
         }
     }
  
-    @IBAction private func newGameButton(_ sender: UIButton) {
+    @IBAction private func newGamePressed(_ sender: UIButton) {
         
         emoji = [:]
-//        emojiChoices = Emoji.init().selectEmojis(index: selectedNumber!)
+        emojiChoices = Emoji.init().selectEmojis(index: selectedNumber!)
         game.resetGame()
         updateLabels()
         updateViewFromModel()
     }
     
-    @IBOutlet weak var newGameButton: UIButton!
+    @IBOutlet weak var newGameButton: UIButton! {
+        didSet {
+            newGameButton.layer.backgroundColor = UIColor.clear.cgColor
+            newGameButton.layer.cornerRadius = 10
+            newGameButton.layer.borderWidth = 4
+            newGameButton.layer.borderColor = emojiChoices!.2 == #colorLiteral(red: 0.002224128577, green: 0.00149387688, blue: 0.007396097716, alpha: 1) ? UIColor.white.cgColor : UIColor.black.cgColor
+        }
+    }
     @IBOutlet weak var flipCounter: UILabel!
     @IBOutlet weak var scoreCounter: UILabel!
     
@@ -54,11 +61,20 @@ class ConcentrationVC: UIViewController {
         flipCounter.text = "Flip Count: \(game.flipCount)"
         // New game label
         newGameButton.backgroundColor = emojiChoices?.2
-        newGameButton.titleLabel?.textColor = emojiChoices?.1
+        newGameButton.setTitleColor(emojiChoices?.1, for: .normal)
+        
     }
     
     
-    @IBOutlet private var cardButtons: [UIButton]!
+    @IBOutlet private var cardButtons: [UIButton]! {
+        didSet {
+            for button in cardButtons {
+                button.layer.cornerRadius = 10
+                button.layer.borderWidth = 4
+                button.layer.borderColor = emojiChoices!.2 == #colorLiteral(red: 0.002224128577, green: 0.00149387688, blue: 0.007396097716, alpha: 1) ? UIColor.white.cgColor : UIColor.black.cgColor
+            }
+        }
+    }
     
     @IBAction private func touchCard(_ sender: UIButton) {
         game.flipcounting()
@@ -100,8 +116,11 @@ class ConcentrationVC: UIViewController {
 //        guard let selectedNumber = selectedNumber else {return}
 //        emoji = [:]
 //        emojiChoices = Emoji.init().selectEmojis(index: selectedNumber)
-//        updateLabels()
-//        updateViewFromModel()
+       //updateViewFromModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateLabels()
     }
     
 }

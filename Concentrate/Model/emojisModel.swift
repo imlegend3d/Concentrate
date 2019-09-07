@@ -10,15 +10,15 @@ import UIKit
 
 struct Emoji {
     
-    enum Theme: Int {
-        case Family = 0
-        case Animals
-        case Space
-        case Weather
-        case Food
-        case Sports
-        case FamilyAgain
-    }
+//    enum Theme: Int {
+//        case Family = 0
+//        case Animals
+//        case Space
+//        case Weather
+//        case Food
+//        case Sports
+//        case FamilyAgain
+//    }
     
     let themes = ["Family", "Animals", "Space", "Weather", "Food", "Sports", "FamilyAgain"]
     

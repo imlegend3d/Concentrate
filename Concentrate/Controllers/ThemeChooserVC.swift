@@ -49,7 +49,7 @@ class ThemeChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         if segue.identifier == "themeToGame", selectedIndex <= emojiThemes.themes.count, selectedIndex >= 0 {
             
             if let concentrationVC = segue.destination as? ConcentrationVC {
-                //concentrationVC.selectedNumber = selectedIndex
+                concentrationVC.selectedNumber = selectedIndex
                 concentrationVC.theme = emojiThemes.selectEmojis(index: selectedIndex)
             }
         }
