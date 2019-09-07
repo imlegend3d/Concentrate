@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632A5D262321A1DE00D98F49 /* ThemeChooserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A5D252321A1DE00D98F49 /* ThemeChooserVC.swift */; };
+		63366531230359680058F991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63795F24219BE71B000CADB0 /* Main.storyboard */; };
 		63795F12219BE15C000CADB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63795F11219BE15C000CADB0 /* AppDelegate.swift */; };
-		63795F14219BE15C000CADB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63795F13219BE15C000CADB0 /* ViewController.swift */; };
+		63795F14219BE15C000CADB0 /* ConcentrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63795F13219BE15C000CADB0 /* ConcentrationVC.swift */; };
 		63795F1C219BE15E000CADB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63795F1A219BE15E000CADB0 /* LaunchScreen.storyboard */; };
 		63795F25219BE71B000CADB0 /* emojisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63795F23219BE71B000CADB0 /* emojisModel.swift */; };
-		63795F26219BE71B000CADB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63795F24219BE71B000CADB0 /* Main.storyboard */; };
 		63795F28219BE743000CADB0 /* ConcentrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63795F27219BE743000CADB0 /* ConcentrationModel.swift */; };
 		63795F2B219BE756000CADB0 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63795F29219BE756000CADB0 /* CardModel.swift */; };
 		63795F2C219BE756000CADB0 /* ShuffleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63795F2A219BE756000CADB0 /* ShuffleExtension.swift */; };
@@ -19,9 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		632A5D252321A1DE00D98F49 /* ThemeChooserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeChooserVC.swift; path = Concentrate/Controllers/ThemeChooserVC.swift; sourceTree = SOURCE_ROOT; };
 		63795F0E219BE15C000CADB0 /* Concentrate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentrate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63795F11219BE15C000CADB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63795F13219BE15C000CADB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63795F13219BE15C000CADB0 /* ConcentrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationVC.swift; sourceTree = "<group>"; };
 		63795F1B219BE15E000CADB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63795F1D219BE15E000CADB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63795F23219BE71B000CADB0 /* emojisModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = emojisModel.swift; sourceTree = "<group>"; };
@@ -48,7 +50,6 @@
 			children = (
 				63795F10219BE15C000CADB0 /* Concentrate */,
 				63795F0F219BE15C000CADB0 /* Products */,
-				63795F29219BE756000CADB0 /* CardModel.swift */,
 				63795F2A219BE756000CADB0 /* ShuffleExtension.swift */,
 				63C79EF9224B655600C2E75D /* Frameworks */,
 			);
@@ -66,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				63795F11219BE15C000CADB0 /* AppDelegate.swift */,
+				63C79EF6224B601D00C2E75D /* Model */,
 				63C79EF5224B600200C2E75D /* View */,
 				63C79EF7224B602C00C2E75D /* Controllers */,
 				63C79EF8224B604100C2E75D /* Suppurting Files */,
@@ -78,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				63795F24219BE71B000CADB0 /* Main.storyboard */,
-				63C79EF6224B601D00C2E75D /* Model */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -88,6 +89,7 @@
 			children = (
 				63795F27219BE743000CADB0 /* ConcentrationModel.swift */,
 				63795F23219BE71B000CADB0 /* emojisModel.swift */,
+				63795F29219BE756000CADB0 /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,7 +97,8 @@
 		63C79EF7224B602C00C2E75D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				63795F13219BE15C000CADB0 /* ViewController.swift */,
+				632A5D252321A1DE00D98F49 /* ThemeChooserVC.swift */,
+				63795F13219BE15C000CADB0 /* ConcentrationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					63795F0D219BE15C000CADB0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -179,9 +183,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63366531230359680058F991 /* Main.storyboard in Resources */,
 				63795F1C219BE15E000CADB0 /* LaunchScreen.storyboard in Resources */,
 				63C79F34224B67AE00C2E75D /* Assets.xcassets in Resources */,
-				63795F26219BE71B000CADB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +196,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63795F14219BE15C000CADB0 /* ViewController.swift in Sources */,
+				632A5D262321A1DE00D98F49 /* ThemeChooserVC.swift in Sources */,
+				63795F14219BE15C000CADB0 /* ConcentrationVC.swift in Sources */,
 				63795F2C219BE756000CADB0 /* ShuffleExtension.swift in Sources */,
 				63795F25219BE71B000CADB0 /* emojisModel.swift in Sources */,
 				63795F12219BE15C000CADB0 /* AppDelegate.swift in Sources */,
@@ -344,7 +349,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dfservices.Concentrate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -362,7 +367,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dfservices.Concentrate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

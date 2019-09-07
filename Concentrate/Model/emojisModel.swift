@@ -10,12 +10,24 @@ import UIKit
 
 struct Emoji {
     
+    enum Theme: Int {
+        case Family = 0
+        case Animals
+        case Space
+        case Weather
+        case Food
+        case Sports
+        case FamilyAgain
+    }
+    
+    let themes = ["Family", "Animals", "Space", "Weather", "Food", "Sports", "FamilyAgain"]
+    
     let randomNumber = Int(arc4random_uniform(6))
     
-    func selectEmojis() -> ([String],UIColor,UIColor) {
+    func selectEmojis(index: Int ) -> ([String],UIColor,UIColor) {
     
     var emojis: ([String],UIColor,UIColor)
-    switch randomNumber {
+    switch index{
     case 0:
         emojis = (["🤴🏻","👸🏻","🐶","💩","🐭","🐷","🐸","🐒"],#colorLiteral(red: 0.5582780242, green: 0.351790607, blue: 0.9695187211, alpha: 1),#colorLiteral(red: 0.002224128577, green: 0.00149387688, blue: 0.007396097716, alpha: 1))
     case 1:

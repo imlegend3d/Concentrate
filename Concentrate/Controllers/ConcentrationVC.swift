@@ -8,21 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationVC: UIViewController {
     
     private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+    
+    var selectedNumber: Int?
     
     var numberOfPairsOfCards: Int {
         get { return (cardButtons.count + 1) / 2}
     }
     //    var emojis:Emoji = Emoji()
-    private var emojiChoices: ([String],UIColor,UIColor) = Emoji.init().selectEmojis()
+    private var emojiChoices: ([String],UIColor,UIColor)?
     private var emoji = [Card:String]()
+    
+    
+    var theme: ([String],UIColor,UIColor)? {
+        didSet{
+            emojiChoices = theme!
+            emoji = [:]
+            updateViewFromModel()
+        }
+    }
  
     @IBAction private func newGameButton(_ sender: UIButton) {
         
         emoji = [:]
-        emojiChoices = Emoji.init().selectEmojis()
+//        emojiChoices = Emoji.init().selectEmojis(index: selectedNumber!)
         game.resetGame()
         updateLabels()
         updateViewFromModel()
@@ -34,16 +45,16 @@ class ViewController: UIViewController {
     
     private func updateLabels() {
         //  score label
-        scoreCounter.backgroundColor = emojiChoices.2
-        scoreCounter.textColor = emojiChoices.1
+        scoreCounter.backgroundColor = emojiChoices?.2
+        scoreCounter.textColor = emojiChoices?.1
         scoreCounter.text = "Score: \(game.score)"
         // flipcount label
-        flipCounter.backgroundColor = emojiChoices.2
-        flipCounter.textColor = emojiChoices.1
+        flipCounter.backgroundColor = emojiChoices?.2
+        flipCounter.textColor = emojiChoices?.1
         flipCounter.text = "Flip Count: \(game.flipCount)"
         // New game label
-        newGameButton.backgroundColor = emojiChoices.2
-        newGameButton.titleLabel?.textColor = emojiChoices.1
+        newGameButton.backgroundColor = emojiChoices?.2
+        newGameButton.titleLabel?.textColor = emojiChoices?.1
     }
     
     
@@ -53,44 +64,44 @@ class ViewController: UIViewController {
         game.flipcounting()
         updateLabels()
         
-        if let cardNumber = cardButtons.index(of: sender){
+        if let cardNumber = cardButtons.firstIndex(of: sender){
             
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         }
     }
     private func updateViewFromModel() {
-        self.view.backgroundColor = emojiChoices.2
+        self.view.backgroundColor = emojiChoices?.2
         
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
             if card.isFaceUp {
-                button.setTitle(emoji (for: card), for: .normal)
+                button.setTitle( emoji(for: card), for: .normal)
                 button.backgroundColor = #colorLiteral(red: 1, green: 0.9975826968, blue: 0.2638010982, alpha: 1)
             } else {
                 button.setTitle("", for: .normal)
-                button.backgroundColor = card.isMatched ?  #colorLiteral(red: 0.5582780242, green: 0.351790607, blue: 0.9695187211, alpha: 0) : emojiChoices.1
+                button.backgroundColor = card.isMatched ?  #colorLiteral(red: 0.5582780242, green: 0.351790607, blue: 0.9695187211, alpha: 0) : emojiChoices?.1
             }
         }
     }
     private func emoji(for card: Card) -> String {
-        if emoji[card] == nil, emojiChoices.0.count > 0  {
-            emoji[card] = emojiChoices.0.remove(at: emojiChoices.0.count.arc4random)
+        if emoji[card] == nil ,(emojiChoices?.0.count)! > 0   {
+            let count = emojiChoices!.0.count
+            emoji[card] = emojiChoices?.0.remove(at: count.arc4random)
         }
-        
-        //  the code below is the same as the return stament that follows it.
-        //        if emoji[card.identifier] != nil {
-        //            return emoji[card.identifier]!
-        //        } else {
-        //            return "?"
-        //        }
+    
         return emoji[card] ?? "?"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        guard let selectedNumber = selectedNumber else {return}
+//        emoji = [:]
+//        emojiChoices = Emoji.init().selectEmojis(index: selectedNumber)
+//        updateLabels()
+//        updateViewFromModel()
     }
     
 }
