@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Theme ChooserVC-->
+        <!--Theme Chooser-->
         <scene sceneID="5iA-Xp-89L">
             <objects>
                 <viewController id="hCE-4N-cZw" customClass="ThemeChooserVC" customModule="Concentrate" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,15 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VY5-Mb-p8b">
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VY5-Mb-p8b">
                                 <rect key="frame" x="91" y="215" width="138" height="682"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="theme" id="mDq-po-dRN">
-                                        <rect key="frame" x="0.0" y="28" width="138" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="138" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mDq-po-dRN" id="9kV-Cr-BB7">
-                                            <rect key="frame" x="0.0" y="0.0" width="138" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="138" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
@@ -51,7 +54,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NTP-Pv-2y8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="w15-XZ-SDK"/>
+                    <navigationItem key="navigationItem" title="Theme Chooser" id="w15-XZ-SDK"/>
                     <connections>
                         <outlet property="themeChooserTV" destination="VY5-Mb-p8b" id="4pK-Rc-2OP"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="themeToGame" id="c8y-tk-ORW"/>
