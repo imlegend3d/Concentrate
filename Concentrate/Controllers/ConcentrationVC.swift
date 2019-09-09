@@ -12,7 +12,7 @@ class ConcentrationVC: UIViewController {
     
     private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
-    var selectedNumber: Int?
+    var selectedNumber: Int? = 0
     
     var numberOfPairsOfCards: Int {
         get { return (cardButtons.count + 1) / 2}
@@ -44,7 +44,7 @@ class ConcentrationVC: UIViewController {
             newGameButton.layer.backgroundColor = UIColor.clear.cgColor
             newGameButton.layer.cornerRadius = 10
             newGameButton.layer.borderWidth = 4
-            newGameButton.layer.borderColor = emojiChoices!.2 == #colorLiteral(red: 0.002224128577, green: 0.00149387688, blue: 0.007396097716, alpha: 1) ? UIColor.white.cgColor : UIColor.black.cgColor
+            newGameButton.layer.borderColor = emojiChoices?.2 == #colorLiteral(red: 0.002224128577, green: 0.00149387688, blue: 0.007396097716, alpha: 1) ? UIColor.white.cgColor : UIColor.black.cgColor
         }
     }
     @IBOutlet weak var flipCounter: UILabel!
@@ -71,7 +71,7 @@ class ConcentrationVC: UIViewController {
             for button in cardButtons {
                 button.layer.cornerRadius = 10
                 button.layer.borderWidth = 4
-                button.layer.borderColor = emojiChoices!.2 == #colorLiteral(red: 0.002224128577, green: 0.00149387688, blue: 0.007396097716, alpha: 1) ? UIColor.white.cgColor : UIColor.black.cgColor
+                button.layer.borderColor = emojiChoices?.2 == #colorLiteral(red: 0.002224128577, green: 0.00149387688, blue: 0.007396097716, alpha: 1) ? UIColor.white.cgColor : UIColor.black.cgColor
             }
         }
     }
@@ -110,18 +110,26 @@ class ConcentrationVC: UIViewController {
         return emoji[card] ?? "?"
     }
     
+    private func setUpViews() {
+        guard let selectedNumber = selectedNumber else {return}
+        emoji = [:]
+        emojiChoices = Emoji.init().selectEmojis(index: selectedNumber)
+        game.resetGame()
+        updateViewFromModel()
+        updateLabels()
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        guard let selectedNumber = selectedNumber else {return}
-//        emoji = [:]
-//        emojiChoices = Emoji.init().selectEmojis(index: selectedNumber)
-       //updateViewFromModel()
+        setUpViews()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateLabels()
-    }
+    } 
     
 }
 

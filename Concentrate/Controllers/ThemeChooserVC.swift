@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThemeChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ThemeChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISplitViewControllerDelegate{
    
     @IBOutlet weak var themeChooserTV: UITableView!
     
@@ -21,6 +21,22 @@ class ThemeChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         themeChooserTV.delegate = self
         themeChooserTV.dataSource = self
+        
+        setUpViews()
+    }
+    
+    override func awakeFromNib() {
+        splitViewController?.delegate = self
+    }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
+    
+    func setUpViews(){
+        
+        view.backgroundColor = UIColor.lightGray
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +53,7 @@ class ThemeChooserVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         selectedIndex = indexPath.row
         
         performSegue(withIdentifier: "themeToGame", sender: tableView.cellForRow(at: indexPath))
